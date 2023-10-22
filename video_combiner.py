@@ -2,14 +2,12 @@
 # -*- coding:utf-8 -*-
 
 import argparse
-import glob
 from moviepy.editor import *
-import os, sys
-
-import imageio
 
 def combine_video(files, name):
     L = []
+    if name == '':
+        name = files[0]
     for file in files:
         video = VideoFileClip(file)
         L.append(video)
